@@ -3,13 +3,13 @@ About ministream-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/ministream-feedstock/blob/main/LICENSE.txt)
 
-Home: https://gitlab.gnome.org/sp1rit/ministream
+Home: https://gitlab.gnome.org/GNOME/ministream
 
 Package license: LGPL-2.1-or-later
 
 Summary: Minimal (subset) appstream metadata parser
 
-Development: https://gitlab.gnome.org/sp1rit/ministream
+Development: https://gitlab.gnome.org/GNOME/ministream
 
 Provides a subset of AppStream support for building libraries like libadwaita
 
@@ -17,7 +17,14 @@ Current build status
 ====================
 
 
-<table>
+<table><tr>
+    <td>GitHub Actions</td>
+    <td>
+      <a href="https://github.com/conda-forge/ministream-feedstock/actions/workflows/conda-build.yml">
+        <img src="https://github.com/conda-forge/ministream-feedstock/actions/workflows/conda-build.yml/badge.svg?event=push&branch=main">
+      </a>
+    </td>
+  </tr>
     
   <tr>
     <td>Azure</td>
@@ -31,24 +38,10 @@ Current build status
         <table>
           <thead><tr><th>Variant</th><th>Status</th></tr></thead>
           <tbody><tr>
-              <td>linux_64</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=27842&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ministream-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
               <td>osx_64</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=27842&branchName=main">
                   <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ministream-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>win_64</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=27842&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ministream-feedstock?branchName=main&jobName=win&configuration=win%20win_64_" alt="variant">
                 </a>
               </td>
             </tr>
@@ -76,31 +69,73 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `ministream` can be installed with `conda`:
+How to use
+----------
+
+<details>
+<summary>With conda</summary>
 
 ```
 conda install ministream
 ```
 
-or with `mamba`:
+</details>
+
+<details>
+<summary>With mamba</summary>
 
 ```
 mamba install ministream
 ```
 
-It is possible to list all of the versions of `ministream` available on your platform with `conda`:
+</details>
+
+<details>
+<summary>With pixi</summary>
+
+```
+# for adding to your local project
+pixi add ministream
+# for installing globally
+pixi global install ministream
+```
+
+</details>
+
+Search package versions
+-----------------------
+
+It is possible to list all of the versions of `ministream` available on your platform:
+
+<details>
+<summary>With conda</summary>
 
 ```
 conda search ministream --channel conda-forge
 ```
 
-or with `mamba`:
+</details>
+
+<details>
+<summary>With mamba</summary>
 
 ```
 mamba search ministream --channel conda-forge
 ```
 
-Alternatively, `mamba repoquery` may provide more information:
+</details>
+
+<details>
+<summary>With pixi</summary>
+
+```
+pixi search ministream --channel conda-forge
+```
+
+</details>
+
+<details>
+<summary>With mamba repoquery, which may provide more information</summary>
 
 ```
 # Search all versions available on your platform:
@@ -112,6 +147,8 @@ mamba repoquery whoneeds ministream --channel conda-forge
 # List dependencies of `ministream`:
 mamba repoquery depends ministream --channel conda-forge
 ```
+
+</details>
 
 
 About conda-forge
